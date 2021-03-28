@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             DemoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    Greeting("Android Jetpack Compose")
                 }
             }
         }
@@ -29,10 +29,15 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    DemoTheme {
-        Greeting("Android")
-    }
-}
+/**
+ * Preview composable
+ * add @Preview annotation
+ * cannot preview composable with params
+ */
+//@Preview(showBackground = true)
+//@Composable
+//fun DefaultPreview() {
+//    DemoTheme {
+//        Greeting("Android")
+//    }
+//}
