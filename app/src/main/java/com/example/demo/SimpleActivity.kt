@@ -35,7 +35,8 @@ fun Greeting(name: String) {
  * add @Preview annotation
  * cannot preview composable with params
  */
-@Preview(showBackground = true)
+
+@Preview(showBackground = true, name = "Greetings")
 @Composable
 fun DefaultPreview() {
     DemoTheme {

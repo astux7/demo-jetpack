@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/compose-model-1617053917389.xml" value="1.0" />
+        <entry key="../../../../layout/compose-model-1617054003501.xml" value="0.125" />
+        <entry key="../../../../layout/compose-model-1617054015440.xml" value="0.1" />
+        <entry key="../../../../layout/compose-model-1617054107920.xml" value="0.335" />
+        <entry key="../../../../layout/compose-model-1617054112190.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="EntryPointsManager">
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="androidx.compose.ui.tooling.preview.Preview" />

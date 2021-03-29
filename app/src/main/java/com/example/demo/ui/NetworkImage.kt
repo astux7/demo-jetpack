@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.coil.CoilImage
-import kotlin.math.round
 
 /**
  * Network image using CoilImage lib
@@ -44,4 +44,10 @@ fun NetworkImageView(url: String) {
             }
         )
     }
+}
+
+@Preview
+@Composable
+fun ImagePreview() {
+    NetworkImageView(url = "https://blazingminds.co.uk/wp-content/uploads/2013/09/minions.jpg")
 }
