@@ -1,13 +1,14 @@
 package com.example.demo
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.setContent
-import androidx.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
+
 import com.example.demo.ui.DemoTheme
 
 class SimpleActivity : AppCompatActivity() {
@@ -34,10 +35,10 @@ fun Greeting(name: String) {
  * add @Preview annotation
  * cannot preview composable with params
  */
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview() {
-//    DemoTheme {
-//        Greeting("Android")
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    DemoTheme {
+        Greeting("Android Hello")
+    }
+}
