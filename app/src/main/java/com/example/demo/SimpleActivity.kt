@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.setContent
 import androidx.ui.tooling.preview.Preview
 import com.example.demo.ui.DemoTheme
 
-class MainActivity : AppCompatActivity() {
+class SimpleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

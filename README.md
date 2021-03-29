@@ -11,4 +11,13 @@ Or check below todo list:
  
  # Coding
  
+ Read More [Here](https://developer.android.com/courses/pathways/compose)
+ JetPack Compose examples [Here](https://github.com/android/compose-samples)
  
+ # Examples
+ 
+ * how Jetpack compose works with Composable, preview functions
+ 
+ * how Column, Clickable Area, Network Image works
+ 
+ * how Lazy Column with 100s Tiles works

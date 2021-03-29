@@ -18,6 +18,11 @@ import androidx.ui.tooling.preview.Preview
 import jp.wasabeef.composable.coil.CoilImage
 
 class ColumnActivity : AppCompatActivity() {
+    enum class ActivityType {
+        SIMPLE,
+        LAZY_COLUMN,
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -34,34 +39,43 @@ class ColumnActivity : AppCompatActivity() {
         Column (
             modifier = Modifier.padding(16.dp)
         ){
+            Text("Jetpack Compose Column Example")
+
             ImageView(url = "https://blazingminds.co.uk/wp-content/uploads/2013/09/minions.jpg")
 
             Spacer(Modifier.preferredHeight(16.dp))
 
-            TextLink("Simple example")
+            TextLink("Simple example", ActivityType.SIMPLE)
 
-            Text("Text Example")
+            Spacer(Modifier.preferredHeight(16.dp))
+
+            TextLink("Lazy column example", ActivityType.LAZY_COLUMN)
+
         }
     }
 
-//    @Preview
-//    @Composable
-//    fun previewStoryList(){
-//        StoryList()
-//    }
+    @Preview
+    @Composable
+    fun previewStoryList(){
+        StoryList()
+    }
 
     /**
      * Clickable text with color
      */
     @Composable
-    fun TextLink(text: String) {
+    fun TextLink(text: String, type: ActivityType) {
         ClickableText(
                 text = AnnotatedString(text, spanStyle = SpanStyle(color = Color.Blue)),
                 modifier = Modifier
                         .padding(0.dp)
                         .fillMaxWidth(),
                 onClick = {
-                    val intent = Intent(this, MainActivity::class.java)
+                    val type = when(type) {
+                        ActivityType.SIMPLE -> SimpleActivity::class.java
+                        ActivityType.LAZY_COLUMN -> LazyActivity::class.java
+                    }
+                    val intent = Intent(this,type )
                     startActivity(intent)
                 }
         )
@@ -75,8 +89,7 @@ class ColumnActivity : AppCompatActivity() {
         Surface(
                 modifier = Modifier
                         .preferredSize(300.dp, 150.dp)
-                        .padding(8.dp),
-              //  shape = RoundedCornerShape(15, 15, 15, 15),
+                        .padding(8.dp)
         ) {
             CoilImage(model = url)
         }
