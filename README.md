@@ -9,15 +9,17 @@ Or check below todo list:
  * You need [Android Studio Canary](https://developer.android.com/studio/preview) 
  * Download this project and open in Android Studio Canary
  
- # Coding
+ # More
  
- Read More [Here](https://developer.android.com/courses/pathways/compose)
- JetPack Compose examples [Here](https://github.com/android/compose-samples)
+ Read More about Jetpack Compose [Here](https://developer.android.com/courses/pathways/compose) <br/>
+ JetPack Compose code examples [Here](https://github.com/android/compose-samples)
  
- # Examples
+ # Examples in this repo
+
+How Jetpack compose works with:
+
+ * Composable, preview functions
  
- * how Jetpack compose works with Composable, preview functions
+ * Column, Clickable Area, Network Image
  
- * how Column, Clickable Area, Network Image works
- 
- * how Lazy Column with 100s Tiles works
+ * Lazy Column with 100s Tiles

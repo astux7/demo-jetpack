@@ -67,4 +67,7 @@ dependencies {
 
     // image
     implementation "com.google.accompanist:accompanist-coil:0.6.2"
+
+    //test
+    testImplementation 'junit:junit:4.+'
 }

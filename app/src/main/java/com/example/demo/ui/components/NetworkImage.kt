@@ -4,10 +4,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,13 +19,14 @@ import com.google.accompanist.coil.CoilImage
 @Composable
 fun NetworkImageView(url: String) {
     val modifier = Modifier
-    val placeholderColor: Color = lightGrey
+    val placeholderColor: Color = Color.Blue
 
     Card(
         modifier = Modifier
             .height(150.dp)
-            .padding(8.dp),
-        shape = RoundedCornerShape(10)
+            .padding(8.dp)
+            .clip(shape = RoundedCornerShape(5)),
+        backgroundColor = placeholderColor
     ) {
         CoilImage(
             data = url,
@@ -49,5 +49,7 @@ fun NetworkImageView(url: String) {
 @Preview
 @Composable
 fun ImagePreview() {
-    NetworkImageView(url = "https://blazingminds.co.uk/wp-content/uploads/2013/09/minions.jpg")
+    NetworkImageView(
+        url = "https://blazingminds.co.uk/wp-content/uploads/2013/09/minions.jpg"
+    )
 }

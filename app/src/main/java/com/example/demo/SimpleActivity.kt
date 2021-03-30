@@ -28,6 +28,8 @@ class SimpleActivity : AppCompatActivity() {
 @Composable
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
+    // Uncomment below
+    // Text(text = "This Is Demo!")
 }
 
 /**
