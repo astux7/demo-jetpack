@@ -1,6 +1,5 @@
 package com.example.demo
 
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
@@ -61,7 +60,9 @@ class FireActivity : AppCompatActivity() {
                     listState[page].url ?: "",
                     listState[page].display,
                     context = applicationContext
-                )
+                ) {
+                    vm.onPostUpdateFields(listState[page])
+                }
             }
         }
     }

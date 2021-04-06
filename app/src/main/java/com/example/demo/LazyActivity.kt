@@ -43,7 +43,8 @@ class LazyActivity : AppCompatActivity() {
                                 "Everybody shake your body \n" +
                                 "Everybody shake your body \n" +
                                 "Ufufuf, do it again ",
-                            "https://media.tenor.com/images/18afef4ee43bea42b408d8cb6a69a300/tenor.gif"
+                            "https://media.tenor.com/images/18afef4ee43bea42b408d8cb6a69a300/tenor.gif",
+                            postAction = {}
                     )
                 }
             }

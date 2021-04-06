@@ -20,9 +20,17 @@ import com.example.demo.ui.lightGrey
 
 @ExperimentalAnimationApi
 @Composable
-fun Tile(title: String, body: String, imageUrl: String? = null, display: Boolean = true, context: Context? = null) {
+fun Tile(title: String,
+         body: String,
+         imageUrl: String? = null,
+         display: Boolean = true,
+         context: Context? = null,
+         postAction: () -> Unit
+) {
     val bgColor = lightGrey
+
     var visible = mutableStateOf(display)
+
     AnimatedVisibility(visible = visible.value) {
         Card(
             modifier = Modifier
@@ -42,6 +50,7 @@ fun Tile(title: String, body: String, imageUrl: String? = null, display: Boolean
                 Modifier.clickable {
                     // visible.value = !visible.value
                     Toast.makeText(context, "Ohh",Toast.LENGTH_LONG).show()
+                    postAction()
                 }
             ) {
                 Row {
@@ -73,6 +82,7 @@ fun PreviewTile() {
     Tile("Title",
         "Text",
         "https://media.tenor.com/images/18afef4ee43bea42b408d8cb6a69a300/tenor.gif",
+        postAction = {}
 
     )
 }

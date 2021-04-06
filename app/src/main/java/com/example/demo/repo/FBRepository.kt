@@ -1,5 +1,6 @@
 package com.example.demo.repo
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.demo.model.Post
@@ -7,6 +8,8 @@ import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.QuerySnapshot
+// https://www.raywenderlich.com/books/saving-data-on-android/v1.0/chapters/13-reading-to-writing-from-realtime-database
+// https://en.proft.me/2019/10/20/firebase-cloud-firestore-and-livedata/
 
 class FBRepository(val database: FirebaseFirestore) {
     // TODO change here - Firestore collection
@@ -48,7 +51,7 @@ class FBRepository(val database: FirebaseFirestore) {
                     val posts = ArrayList<Post>()
                     for (doc in value) {
                         val post = doc.toObject(Post::class.java)
-                        posts.add(post)
+                        posts.add(post.copy(id = doc.id))
                     }
                     postsValues.postValue(posts)
                 }
@@ -57,19 +60,18 @@ class FBRepository(val database: FirebaseFirestore) {
 
     fun stopListeningForPostChanges() = postsRegistration.remove()
 
-//        fun updatePostContent(
-//            key: String, content: String,
-//            onSuccessAction: () -> Unit, onFailureAction: () -> Unit
-//        ) {
-//
-//            val updatedPost = HashMap<String, Any>()
-//         //   updatedPost[CONTENT_KEY] = content
-//            database.collection(PAGE_COLLECTION)
-//                .document(key)
-//                .update(updatedPost)
-//                .addOnSuccessListener { onSuccessAction() }
-//                .addOnFailureListener { onFailureAction() }
-//        }
+    fun updatePostContent(key: String, content: Boolean = true,
+                          onSuccessAction: () -> Unit, onFailureAction: () -> Unit) {
+
+        val updatedPost = HashMap<String, Any>()
+        updatedPost["display"] = content
+        database.collection(PAGE_COLLECTION)
+            .document(key)
+            .update(updatedPost)
+            .addOnSuccessListener { onSuccessAction() }
+            .addOnFailureListener { onFailureAction() }
+    }
+
 //
 //        fun deletePost(key: String, onSuccessAction: () -> Unit, onFailureAction: () -> Unit) {
 //            database.collection(PAGE_COLLECTION)
