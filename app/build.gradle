@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -74,6 +75,7 @@ dependencies {
 
     // image
     implementation "com.google.accompanist:accompanist-coil:0.6.2"
+    implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
 
     //test
     testImplementation 'junit:junit:4.+'
