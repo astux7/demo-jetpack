@@ -75,6 +75,9 @@ dependencies {
 
     // image
     implementation "com.google.accompanist:accompanist-coil:0.6.2"
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+
     implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
 
     //test
