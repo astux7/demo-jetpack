@@ -23,3 +23,10 @@ How Jetpack compose works with:
  * Column, Clickable Area, Network Image
  
  * Lazy Column with 100s Tiles
+
+ * Jetpack compose with Firestore
+
+ # Set up firestore
+Get / make google-services.json file from [FireStore](https://console.firebase.google.com/) and add it under /app
+
+Set collection in FBRepository file `PAGE_COLLECTION` i.e. to `mine`

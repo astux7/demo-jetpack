@@ -32,7 +32,7 @@ fun NetworkImageView(url: String) {
             data = url,
             modifier = modifier,
             contentDescription = "Image",
-            contentScale = ContentScale.Fit,
+            contentScale = ContentScale.Crop,
             loading = {
                 if (placeholderColor != null) {
                     Spacer(
