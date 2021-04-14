@@ -7,6 +7,12 @@ plugins {
 android {
     compileSdkVersion 30
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+
     defaultConfig {
         applicationId "com.example.demo"
         minSdkVersion 21
@@ -78,5 +84,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
 
     //test
-    testImplementation 'junit:junit:4.+'
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose_version")
+
 }

@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import com.example.demo.ui.NetworkImageView
 import com.example.demo.ui.lightGrey
 
+const val TileTestTag = "TileTestTag"
+
 @ExperimentalAnimationApi
 @Composable
 fun Tile(title: String,
@@ -48,7 +50,7 @@ fun Tile(title: String,
 
             Column(
                 Modifier.clickable {
-                    // visible.value = !visible.value
+                    visible.value = !visible.value
                     Toast.makeText(context, "Ohh",Toast.LENGTH_LONG).show()
                     postAction()
                 }
@@ -62,7 +64,7 @@ fun Tile(title: String,
 
                         Spacer(Modifier.height(16.dp))
 
-                        Text(body, color = Color.Black, modifier = Modifier.padding(8.dp))
+                 //       Text(body, color = Color.Black, modifier = Modifier.padding(8.dp))
                     }
                     Column(Modifier.width(150.dp)) {
                         imageUrl?.let { url ->
