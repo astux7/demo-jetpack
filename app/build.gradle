@@ -82,8 +82,12 @@ dependencies {
     // image
     implementation "com.google.accompanist:accompanist-coil:0.6.2"
     implementation 'com.google.firebase:firebase-firestore-ktx:22.1.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //test
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose_version")
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
 
 }

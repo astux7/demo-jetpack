@@ -1,11 +1,14 @@
 package com.example.demo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.Button
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -32,7 +35,14 @@ class FireActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            StoryListPage()
+            Column {
+                Button(onClick = {
+                    startActivity(Intent(applicationContext, MainActivity::class.java))
+                }) {
+                    Text("AndroidView")
+                }
+                StoryListPage()
+            }
         }
     }
 
