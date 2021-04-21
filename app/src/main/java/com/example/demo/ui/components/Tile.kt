@@ -40,19 +40,17 @@ fun Tile(title: String,
                     top = 16.dp,
                     end = 24.dp,
                     bottom = 16.dp
-                ),
+                ).clickable {
+                    visible.value = !visible.value
+                    Toast.makeText(context, "Ohh",Toast.LENGTH_LONG).show()
+                    postAction()
+                },
             backgroundColor = bgColor,
             shape = RoundedCornerShape(5)
         )
         {
 
-            Column(
-                Modifier.clickable {
-                   // visible.value = !visible.value
-                    Toast.makeText(context, "Ohh",Toast.LENGTH_LONG).show()
-                    postAction()
-                }
-            ) {
+            Column{
                 Row {
                     Column(Modifier.fillMaxWidth(0.60f)
                     ){

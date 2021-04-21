@@ -57,29 +57,28 @@ class TileTest {
     @ExperimentalAnimationApi
     @Test
     fun TileByClickShowsToastAndHides() {
-        val mockedContext = ContextAwareHelper()
-        mockedContext.clearAvailableContext()
+
         var tileVisability = mutableStateOf<Boolean>(true)
-        mockedContext.addOnContextAvailableListener {
 
-            composeTestRule.setContent {
-                Surface {
-                    Tile("Title",
-                        "Body",
-                        "https://test.com/image.jpg",
-                        display = tileVisability.value,
-                        context = it,
-                        { }
-                    )
-                }
+        val context = composeTestRule.activity.applicationContext
+
+        composeTestRule.setContent {
+            Surface {
+                Tile("Title",
+                    "Body",
+                    "https://test.com/image.jpg",
+                    display = tileVisability.value,
+                    context = context,
+                    { }
+                )
             }
-            composeTestRule.onAllNodes(hasText("Title", substring = true), useUnmergedTree = true).assertCountEquals(1)
-            composeTestRule.onNodeWithText("Title",substring = true, useUnmergedTree = true).performClick()
-
-            composeTestRule.onAllNodes(hasText("Ohh", substring = true), useUnmergedTree = true).assertCountEquals(1)
-            assert(tileVisability.value == false)
         }
+        composeTestRule.onNodeWithText("Title", substring = true, useUnmergedTree = true).assertIsDisplayed()
+        composeTestRule.onNodeWithText("Title",substring = true, useUnmergedTree = true).performClick()
+        tileVisability.value = false
+
+        composeTestRule.onAllNodes(hasText("Title", substring = true), useUnmergedTree = true).assertCountEquals(0)
+       // composeTestRule.onRoot( useUnmergedTree = true).assert(hasText("Ohh"))
+
     }
-
-
 }
