@@ -1,11 +1,15 @@
 package com.example.demo
 
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.fragment.findNavController
 import com.example.demo.databinding.FragmentFirstBinding
 
@@ -24,10 +28,15 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentFirstBinding.inflate(inflater, container, false).apply {
-            findViewById<ComposeView>(R.id.compose_view).setContent { }
+        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+
+        return binding.root.apply {
+            findViewById<ComposeView>(R.id.compose_view).setContent {
+                MaterialTheme {
+                    Text("Hello Compose!", textAlign = TextAlign.Center)
+                }
+            }
         }
-        return binding.root
 
     }
 
