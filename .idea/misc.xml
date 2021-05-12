@@ -28,6 +28,8 @@
         <entry key="../../../../layout/compose-model-1617748235821.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/grey_shine_divider.xml" value="0.20885416666666667" />
         <entry key="app/src/main/res/drawable/shine_divider.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/layout/activity_interop.xml" value="0.2246376811594203" />
+        <entry key="app/src/main/res/layout/content_interop.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.14947916666666666" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.19270833333333334" />
       </map>

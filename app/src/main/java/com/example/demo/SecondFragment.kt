@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.text.style.TextAlign
@@ -40,10 +40,13 @@ class SecondFragment : Fragment() {
         return binding.root.apply {
             findViewById<ComposeView>(R.id.compose_container).setContent {
                 MaterialTheme {
-                    Column() {
-                        Text("Hello Compose Again!", textAlign = TextAlign.Center)
+                    Column(Modifier.fillMaxWidth().wrapContentHeight(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                        Text("Hello Compose Again!", modifier = Modifier.padding(10.dp))
                         SkyDivider()
-                        Text("What a lovely divider!", textAlign = TextAlign.Center)
+                        Text("What a lovely divider!", modifier = Modifier.padding(10.dp))
                     }
                 }
             }
@@ -55,17 +58,10 @@ class SecondFragment : Fragment() {
     AndroidView(
         modifier = Modifier.height(15.dp), // Occupy the max size in the Compose UI tree
         factory = { context ->
-            // Creates custom view
             ShineDivider.Builder().withData(ShineDividerData(false, true)).build(context = context)
         },
         update = { view ->
-            // View's been inflated or state read in this block has been updated
-            // Add logic here if necessary
-
-            // As selectedItem is read here, AndroidView will recompose
-            // whenever the state changes
-            // Example of Compose -> View communication
-//            view.coordinator.selectedItem = selectedItem.value
+//            If we wanted to update the state or interact with the view, this logic would go here
         }
     )
     }
